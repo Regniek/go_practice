@@ -11,6 +11,9 @@ type Employee struct {
 	id int
 }
 
+// en GO no existe la herencia existe la composicion sobre herencia
+// lo que se hace en la erencia es pasar el struct del Employee y
+// de Person dentro del nuevo struct eso ya nos permitira halar algo similar a la herencia
 type FullTimeEmployee struct {
 	Person
 	Employee
@@ -26,6 +29,8 @@ type TemporaryEmployee struct {
 	taxRate int
 }
 
+// las interfaces no se implementan de manera explicita en Go
+// forma implicita para agregar interfaces en ciertas clases o structs
 func (tEmployee TemporaryEmployee) getMessage() string {
 	return "Temporary Time Employee"
 }
@@ -35,6 +40,7 @@ func (tEmployee TemporaryEmployee) getMessage() string {
 // }
 
 // se genera un interfaz para reemplazar el metodo anterior y evitar repetir codigo
+// la interface es simila r afirmamr un contrato donde te comprometes a implementar todol lo que esta en ella
 
 type PrintInfo interface {
 	getMessage() string

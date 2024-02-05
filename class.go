@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// creamos un struct algo similar a una clase nos permite tener atributos y metodos en una especie de clase
 type Employee struct {
 	id       int
 	name     string
@@ -9,7 +10,7 @@ type Employee struct {
 }
 
 //emulando funcion constructora
-
+// cuando trabajamos con structs y los devolvemos en funciones go los trata como si fueran copias
 func NewEmployee(id int, name string, vacation bool) *Employee {
 	return &Employee{
 		id:       id,
@@ -17,6 +18,10 @@ func NewEmployee(id int, name string, vacation bool) *Employee {
 		vacation: vacation,
 	}
 }
+
+// si se dan cuenta esta e sla forma de agregar metodos a los structs de go
+// Los lenguajes d eprogramacion  son herramientas pero debes conoce runo super bien para moverte facil en trte ellos
+// aprender programacion funcional y poo imperativa
 
 func (e *Employee) SetId(id int) {
 	e.id = id
@@ -48,6 +53,8 @@ func main() {
 	// e.id = 1
 	// e.name = "Chingon"
 	// fmt.Printf("%v", e)
+
+	// Estos metodos nos ayudan a setear los atirbutos
 	// e.SetId(5)
 	// e.SetName("Perej")
 	// fmt.Printf("%v", e)
